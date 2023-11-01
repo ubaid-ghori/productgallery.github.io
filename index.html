@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Product List</h1>
+    </div>
+    <div class="filters">
+        <div class="rating-filter">
+            <label for="sort">Filter by Rating:</label>
+            <input type="radio" name="sort" value="all" checked /> All
+            <input type="radio" name="sort" value="3" /> Above 3
+            <input type="radio" name="sort" value="4" /> Above 4
+        </div>
+        <div class="price-filter">
+            <label for="sort-price">Sort by Price:</label>
+            <input type="radio" name="sort-price" value="high" /> High - Low
+            <input type="radio" name="sort-price" value="low" /> Low - High
+        </div>
+        <div class="range-filter">
+            <label for="range-input">Price Range:</label>
+            <input type="range" min="0" max="1000" value="0" id="range-input"/>
+        </div>
+    </div>
+    <div id="productContainer" class="product-list"></div>
+    <script src="index.js"></script>
+</body>
+</html>
