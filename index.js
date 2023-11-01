@@ -285,3 +285,26 @@ const products = [
   
   const searched = products.filter((data)=> data.title.toLowerCase().includes('mens'))
   console.log(searched)
+  const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+
+// Function to filter products based on the search query
+function searchProducts(query) {
+    const searchQuery = query.toLowerCase();
+    const searchResults = products.filter(product => product.title.toLowerCase().includes(searchQuery));
+    displayProducts(searchResults);
+}
+
+// Event listener for the search button
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value;
+    searchProducts(query);
+});
+
+// Event listener for pressing Enter key in the search input field
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchInput.value;
+        searchProducts(query);
+    }
+});
